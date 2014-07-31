@@ -40,3 +40,8 @@ fi
 
 git submodule update --init --recursive
 git submodule foreach --recursive git pull origin master
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done

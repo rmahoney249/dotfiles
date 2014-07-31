@@ -64,3 +64,9 @@
 [submodule "_vim/bundle/ctrlp"]
 	path = _vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "_vim/bundle/airline"]
+	path = _vim/bundle/airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "_zprezto"]
+	path = _zprezto
+	url = https://github.com/rmahoney249/prezto.git
