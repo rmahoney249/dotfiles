@@ -37,3 +37,7 @@ startup_message off
 
 # Set messages timeout to one second:
 msgwait 1
+
+# 256 color tweaks for solarized
+term screen-256color-bce
+attrcolor b ".I"
