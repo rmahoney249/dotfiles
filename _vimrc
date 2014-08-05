@@ -307,3 +307,5 @@ endif
 if exists("&colorcolumn")
    set colorcolumn=79
 endif
+
+let g:airline_powerline_fonts = 1
