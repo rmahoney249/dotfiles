@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 function link_file {
     source="${PWD}/$1"
     target="${HOME}/${1/_/.}"
@@ -42,6 +42,6 @@ git submodule update --init --recursive
 git submodule foreach --recursive git pull origin master
 
 setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+for rcfile in _zprezto/runcoms/^README.md(.N); do
+    ln -s "${PWD}/$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done

@@ -233,10 +233,10 @@ set incsearch               " Incrementally search while typing a /regex
 """" Display
 if has("gui_running")
     " Remove menu bar
-    set guioptions-=m
+    " set guioptions-=m
 
     " Remove toolbar
-    set guioptions-=T
+    "set guioptions-=T
 endif
 
 colorscheme solarized

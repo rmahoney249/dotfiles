@@ -67,3 +67,6 @@
 [submodule "_zprezto"]
 	path = _zprezto
 	url = https://github.com/rmahoney249/prezto.git
+[submodule "_vim/bundle/pig.vim"]
+	path = _vim/bundle/pig.vim
+	url = https://github.com/motus/pig.vim.git
