@@ -1,17 +1,9 @@
-# Import the keyring module.
-import gnomekeyring as gk
+#!/usr/bin/env python2
 
-def get_gk_pass(keyring_name, key):
-    itemkeys = gk.list_item_ids_sync(keyring_name)
+import subprocess
 
-    # Loop through keys, get key name and test against input. 
-    for keyid in itemkeys:
-        item_info = gk.item_get_info_sync(keyring_name, keyid)
-
-        name = item_info.get_display_name()
-
-        if name == key:
-            return item_info.get_secret()
-
-if __name__ == "__main__":
-    print get_gk_pass('login', 'sontek@gmail.com'),
+def get_pass(key):
+    return subprocess.check_output(["kwallet-query", "-f", "Passwords", "-r", key, "kdewallet"])[:-1]
+    
+if __name__ == '__main__':
+    print(get_pass("rmahoney249_gmail"))
