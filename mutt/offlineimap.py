@@ -2,8 +2,8 @@
 
 import subprocess
 
-def get_pass(key):
-    return subprocess.check_output(["kwallet-query", "-f", "Passwords", "-r", key, "kdewallet"])[:-1]
+def get_secret(folder, key):
+    return subprocess.check_output(["kwallet-query", "-f", folder, "-r", key, "kdewallet"])[:-1]
     
 if __name__ == '__main__':
-    print(get_pass("rmahoney249_gmail"))
+    print(get_secret("Passwords", "rmahoney249_gmail"))

@@ -1,0 +1,31 @@
+[general]
+ui = ttyui
+accounts = Gmail
+pythonfile = ~/.mutt/offlineimap.py
+
+[Account Gmail]
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/Mail/Gmail
+## Remove GMAIL prefix on Google-specific IMAP folders that are pulled down.
+nametrans = lambda f: '[Gmail]/' + f if f in ['Drafts', 'Starred', 'Important', 'Spam', 'Trash', 'All Mail', 'Sent Mail'] else f
+
+[Repository Gmail-Remote]
+type = IMAP
+remotehost = imap.gmail.com
+remoteuser = rmahoney249@gmail.com
+ssl = yes
+starttls = no
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl_version=tls1_2
+# remove Gmail prefix on IMAP folders
+nametrans = lambda f: f.replace('[Gmail]/', '') if f.startswith('[Gmail]/') else f
+auth_mechanisms = XOAUTH2
+oauth2_client_id = 996390356588-uuporj0u9omprih1g8ueoond0ecvnn7p.apps.googleusercontent.com
+oauth2_client_secret_eval = get_secret("Secrets", "996390356588-uuporj0u9omprih1g8ueoond0ecvnn7p.apps.googleusercontent.com")
+oauth2_request_url = https://accounts.google.com/o/oauth2/token
+oauth2_refresh_token_eval = get_secret("Tokens", "996390356588-uuporj0u9omprih1g8ueoond0ecvnn7p.apps.googleusercontent.com")
+
