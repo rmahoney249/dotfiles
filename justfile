@@ -13,7 +13,7 @@ install-nix nix_apps args="":
               echo "Building output ${out} for ${app}"; \
               nix build {{ args }} nixpkgs#${app}.${out}; \
           done; \
-          nix profile install {{ args }} nixpkgs#${app}; \
+          nix profile add {{ args }} nixpkgs#${app}; \
       else \
           echo "Package ${app} already installed, skipping"; \
       fi \
@@ -63,7 +63,7 @@ install-system-apps:
   @just install-nix "libgit2"
   @just install-nix "libffi"
   @just install-nix "libpng"
-  @just install-nix "loc"
+  @just install-nix "tokei"
   @just install-nix "lz4"
   @just install-nix "minikube"
   @just install-nix "ncurses"

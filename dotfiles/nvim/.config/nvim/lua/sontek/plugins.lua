@@ -52,14 +52,26 @@ return require('packer').startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
     -- A reasonably decent colorscheme
-    use "ellisonleao/gruvbox.nvim"
+    -- use "ellisonleao/gruvbox.nvim"
+    use {
+        'maxmx03/solarized.nvim',
+        config = function()
+            vim.o.background = 'dark'
+            ---@type solarized
+            local solarized = require('solarized')
+            vim.o.termguicolors = true
+            vim.o.background = 'dark'
+            solarized.setup({})
+            vim.cmd.colorscheme 'solarized'
+        end
+    }
 
     -- UI to select things (files, grep results, open buffers...)
     -- https://github.com/nvim-telescope/telescope.nvim
     use {
-        'nvim-telescope/telescope.nvim',
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
         requires = {
-            'nvim-lua/plenary.nvim'
+            { 'nvim-lua/plenary.nvim' }
         }
     }
 

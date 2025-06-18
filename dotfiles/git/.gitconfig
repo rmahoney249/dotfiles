@@ -2,8 +2,8 @@
     template = ~/.gitmessage
 
 [user]
-    name = John Anderson
-    email = sontek@gmail.com
+    name = Ron Mahoney
+    email = rmahoney249@gmail.com
 
 [includeIf "gitdir:~/code/stacklet/"]
     path = .gitconfig-stacklet
