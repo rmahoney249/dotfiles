@@ -78,7 +78,7 @@ install-system-apps:
   @just install-nix "neovim"
   @just install-nix "readline"
   @just install-nix "ripgrep"
-  @just install-nix "rtx"
+  @just install-nix "mise"
   @just install-nix "sd"
   @just install-nix "shellcheck"
   @just install-nix "starship"

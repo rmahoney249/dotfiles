@@ -1,4 +1,6 @@
 alias ls='eza -lah'
+alias ll='eza -l'
+alias la='eza -la'
 alias cat='bat --paging=never'
 alias less='bat --paging=always'
 alias drun='docker run --rm -it -v "${PWD}":/app -w /app'

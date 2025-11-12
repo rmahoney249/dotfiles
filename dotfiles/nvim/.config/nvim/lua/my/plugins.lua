@@ -53,32 +53,21 @@ return require('packer').startup(function(use)
 
     -- A reasonably decent colorscheme
     -- use "ellisonleao/gruvbox.nvim"
-    use {
-        'maxmx03/solarized.nvim',
-        config = function()
-            vim.o.background = 'dark'
-            ---@type solarized
-            local solarized = require('solarized')
-            vim.o.termguicolors = true
-            vim.o.background = 'dark'
-            solarized.setup({})
-            vim.cmd.colorscheme 'solarized'
-        end
-    }
-
+    use 'craftzdog/solarized-osaka.nvim'
+    
     -- UI to select things (files, grep results, open buffers...)
     -- https://github.com/nvim-telescope/telescope.nvim
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.8',
-        requires = {
-            { 'nvim-lua/plenary.nvim' }
-        }
+      'nvim-telescope/telescope.nvim', tag = '0.1.8',
+      requires = {
+        { 'nvim-lua/plenary.nvim' }
+      }
     }
 
     -- fzf-native is a faster sorting plugin for working with large projects
     use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+      'nvim-telescope/telescope-fzf-native.nvim',
+      run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
     }
 
     -- Very fast syntax highlighting.
@@ -141,11 +130,10 @@ return require('packer').startup(function(use)
     end
 
     -- load plugin specific settings here
-    require('sontek.telescope')
-    require('sontek.nvim-tree')
-    require('sontek.gitlinker')
-    require('sontek.JABS')
-    require('sontek.toggleterm')
-
+    require('my.telescope')
+    require('my.nvim-tree')
+    require('my.gitlinker')
+    require('my.JABS')
+    require('my.toggleterm')
 end)
 

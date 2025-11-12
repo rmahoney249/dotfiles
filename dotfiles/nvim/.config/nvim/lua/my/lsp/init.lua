@@ -1,4 +1,4 @@
-require('sontek.lsp.mason')
+require('my.lsp.mason')
 local config = {
     -- disable virtual text
     virtual_text = false,
@@ -66,12 +66,13 @@ for _, lsp in pairs(servers) do
     -- Load server settings from the settings file in lsp/servers/
     local has_custom_opts, server_options = pcall(
         require,
-        "sontek.lsp.settings." .. lsp
+        "my.lsp.settings." .. lsp
     )
     if has_custom_opts then
         opts = vim.tbl_deep_extend("force", server_options, opts)
     end
 
-    require('lspconfig')[lsp].setup(opts)
+    -- require('lspconfig')[lsp].setup(opts)
+    vim.lsp.enable(opts)
 end
 
