@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
     -- A reasonably decent colorscheme
     -- use "ellisonleao/gruvbox.nvim"
     use 'craftzdog/solarized-osaka.nvim'
-    
+
     -- UI to select things (files, grep results, open buffers...)
     -- https://github.com/nvim-telescope/telescope.nvim
     use {
@@ -136,4 +136,3 @@ return require('packer').startup(function(use)
     require('my.JABS')
     require('my.toggleterm')
 end)
-

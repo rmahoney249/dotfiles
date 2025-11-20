@@ -37,6 +37,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Add hombrew
 export PATH="$PATH:/opt/homebrew/bin"
 
+# Add local
+export PATH="$PATH:$HOME/.local/bin"
+
 # Use newer llvm from homebrew
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
@@ -54,7 +57,7 @@ then
 fi
 
 
-eval "$(direnv hook zsh)"
+#eval "$(direnv hook zsh)"
 
 # Use ipdb by default when debugging python
 export PYTHONBREAKPOINT=ipdb.set_trace

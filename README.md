@@ -17,6 +17,7 @@ To get everything installed and provisioned you can run:
 
 ```
 just install
+just install-dotfiles
 ```
 
 # Vim
@@ -25,6 +26,9 @@ To update the plugins used in nvim:
 ```
 :PackerUpdate
 ```
+The telescope/fzf plugin needs a C compiler, like gcc or clang. On Ubuntu/Debian, you can install it with `sudo apt install build-essential`.
+
+The language servers need different tools intsalled. Pyright needs python. Other LSPs need npm or go.
 
 # Fonts
 I currently use JetBrainsMono Nerd Font patched from here:
